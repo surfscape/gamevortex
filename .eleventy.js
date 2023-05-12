@@ -16,6 +16,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("games", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/games/**/*.md");
   });
+  eleventyConfig.addGlobalData(
+    "pathPrefix",
+    process.env.NODE_ENV === "production" ? "/gamevortex" : ""
+  );
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
     extensions: "html",
     filters: {
@@ -24,6 +28,7 @@ module.exports = function (eleventyConfig) {
       pathPrefix: "addPathPrefixToUrl",
     },
   });
+
   return {
     dir: {
       input: "src",
