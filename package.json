@@ -1,0 +1,23 @@
+{
+  "name": "surfscape-gamevortex",
+  "version": "0.0.2",
+  "description": "Your nostalgic, Neocities inspired, flash games portal!",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx eleventy",
+    "build:production": "cross-env NODE_ENV=production npx eleventy"
+  },
+  "author": "The SurfScape Team",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "cross-env": "^7.0.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.7"
+  },
+  "dependencies": {
+    "striptags": "^3.2.0"
+  }
+}

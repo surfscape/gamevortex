@@ -1,0 +1,16 @@
+{
+  "siteNav": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "Games",
+      "url": "/games"
+    },
+    {
+      "title": "Requests",
+      "url": "/requests"
+    }
+  ]
+}

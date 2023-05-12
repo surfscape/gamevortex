@@ -1,0 +1,12 @@
+ruffle-player {
+  --ruffle-blue: #6639ba;
+  --ruffle-orange: #b69eff;
+  width: 1280px;
+  height: 720px;
+  font-family: inherit;
+  line-height: 1.5;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include "basehead.njk" %}
+  </head>
+  <body>
+    {% include "header.njk" %}
+    <main>
+      {% block content %}
+        {{ content | safe}}
+      {% endblock %}
+    </main>
+    {% include "footer.njk" %}
+  </body>
+</html>

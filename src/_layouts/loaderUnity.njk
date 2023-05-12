@@ -1,0 +1,23 @@
+{% extends "./gameLoader.njk" %}
+
+{% block content %}
+    <script src="/public/libs/UnityLoader.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "/public/library/unity/{{gamePath}}/{{gamePath}}.json");
+    </script>
+    <div class="webgl--content">
+        <div id="gameContainer">
+            <canvas id="#canvas"></canvas>
+        </div>
+    </div>
+    <style>
+        #gameContainer,
+        #unityContainer,
+        .webgl-content,
+        canvas {
+            width: 900px !important;
+            height: 650px !important;
+        }
+    </style>
+    {{ content | safe }}
+{% endblock %}

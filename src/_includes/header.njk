@@ -1,0 +1,9 @@
+<header>
+    <span class="header__title">SurfScape GameVortex
+        </span>
+    <nav>
+        {%- for siteNav in nav.siteNav -%}
+            <a href="{{ siteNav.url }}" {% if siteNav.active %}{% else %} {% if (siteNav.url != "/" and page.url.startsWith(siteNav.url)) or page.url == siteNav.url %}aria-current="page"{% endif %}{% endif %}>{{ siteNav.title }}</a>
+        {%- endfor -%}
+    </nav>
+</header>

@@ -1,0 +1,12 @@
+{% extends "./gameLoader.njk" %}
+
+{% block content %}
+    <canvas id="canvas" width="500" height="250" >
+        <p>Your browser doesn't support HTML5 canvas.</p>
+    </canvas>
+    <script type="text/javascript" src="/public/library/js/{{gamePath}}/{{gamePath}}.js{{gameParameters}}"></script>
+    <script>
+        window.onload = GameMaker_Init;
+    </script>
+    {{ content | safe }}
+{% endblock %}
