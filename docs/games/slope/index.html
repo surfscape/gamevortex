@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-    Games - SurfScape GameVortex
+    Slope - SurfScape GameVortex
     
 </title>
 <meta name="description" content="Your nostalgic, Neocities inspired, flash games portal!">
@@ -22,15 +22,26 @@
 </header>
     <main>
       
-        <h1>GameVortex Library</h1>
-<p><a href="/gamevortex/games/age-of-war/">Age of War</a></p>
-<p><a href="/gamevortex/games/bowman-2/">Bowman 2</a></p>
-<p><a href="/gamevortex/games/shift/">SHIFT</a></p>
-<p><a href="/gamevortex/games/the-world-s-hardest-game/">The World's Hardest Game</a></p>
-<p><a href="/gamevortex/games/interactive-buddy/">Interactive Buddy</a></p>
-<p><a href="/gamevortex/games/slope/">Slope</a></p>
+    <script src="/gamevortex/public/libs/UnityLoader.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "/public/library/unity/slope/slope.json");
+    </script>
+    <div class="webgl--content">
+        <div id="gameContainer">
+            <canvas id="#canvas"></canvas>
+        </div>
+    </div>
+    <style>
+        #gameContainer,
+        #unityContainer,
+        .webgl-content,
+        canvas {
+            width: 900px !important;
+            height: 650px !important;
+        }
+    </style>
+    
 
-      
     </main>
     <footer>
     &copy; 2023 - SurfScape GameVortex is part of the <a href="https://surfscape.neocities.org">SurfScape Project</a> - <em>running 0.0.2</em>

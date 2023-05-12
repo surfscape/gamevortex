@@ -1,4 +1,0 @@
-{
-  "layout": "loaderJs.njk",
-  "permalink": "/games/{{title | slugify }}"
-}

@@ -1,4 +1,4 @@
 {
   "layout": "loaderUnity.njk",
-  "permalink": "/games/{{title | slugify }}"
+  "permalink": "/games/{{title | slugify }}/"
 }
