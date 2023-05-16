@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>
-    Support - SurfScape GameVortex
+    Run 2 - SurfScape GameVortex
     
 </title>
 <meta name="description" content="Your nostalgic, Neocities inspired, flash games portal!"/>
@@ -18,13 +18,26 @@
     <header>
     <span class="header__title">SurfScape GameVortex
         </span>
-    <nav><a href="/"  >Home</a><a href="/games"  >Games</a><a href="/requests"  >Requests</a></nav>
+    <nav><a href="/"  >Home</a><a href="/games"  aria-current="page">Games</a><a href="/requests"  >Requests</a></nav>
 </header>
     <main>
       
-        <h1>Support</h1>
+    <script src="/public/libs/ruffle.js"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window
+                .RufflePlayer
+                .newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            player.load("/public/library/flash/run_2.swf");
+        });
+    </script>
+    <div id="container" class="game--window--container"></div>
+    
 
-      
     </main>
     <footer>
     &copy; 2023 - SurfScape GameVortex is part of the <a href="https://surfscape.neocities.org">SurfScape Project</a> - <em>running 0.0.1-dev1</em>
