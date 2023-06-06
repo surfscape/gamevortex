@@ -32,10 +32,16 @@
             const player = ruffle.createPlayer();
             const container = document.getElementById("container");
             container.appendChild(player);
-            player.load(/public/library/flash/feednfrenzy.swf);
+
+            const sourceLink = document
+                .querySelector('a[href^="/public/library/flash/"]')
+                .getAttribute("href");
+            const gamePath = sourceLink.substring(sourceLink.lastIndexOf("/") + 1);
+            player.load(`/public/library/flash/${gamePath}`);
         });
     </script>
     <div id="container" class="game--window--container"></div>
+    <a href="/gamevortex/public/library/flash/feednfrenzy.swf">Source</a>
     
 
     </main>
