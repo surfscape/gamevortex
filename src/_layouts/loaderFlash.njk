@@ -11,15 +11,13 @@
             const player = ruffle.createPlayer();
             const container = document.getElementById("container");
             container.appendChild(player);
-
             const sourceLink = document
-                .querySelector('a[href^="/public/library/flash/"]')
+                .getElementById("sourceLink")
                 .getAttribute("href");
-            const gamePath = sourceLink.substring(sourceLink.lastIndexOf("/") + 1);
-            player.load(`/public/library/flash/${gamePath}`);
+            player.load(sourceLink);
         });
     </script>
     <div id="container" class="game--window--container"></div>
-    <a href="/public/library/flash/{{gamePath}}">Source</a>
+    <a id="sourceLink" href="/public/library/flash/{{gamePath}}">Game File</a>
     {{ content | safe }}
 {% endblock %}

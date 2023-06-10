@@ -4,12 +4,14 @@
     {% include "basehead.njk" %}
   </head>
   <body>
-    {% include "header.njk" %}
     <main>
+      {% include "header.njk" %}
+
       {% block content %}
         {{ content | safe}}
       {% endblock %}
+
+      {% include "footer.njk" %}
     </main>
-    {% include "footer.njk" %}
   </body>
 </html>

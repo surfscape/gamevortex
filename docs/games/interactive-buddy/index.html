@@ -15,12 +15,13 @@
 
   </head>
   <body>
-    <header>
-    <span class="header__title">SurfScape GameVortex
-        </span>
-    <nav><a href="/gamevortex/">Home</a><a href="/gamevortex/games" aria-current="page">Games</a><a href="/gamevortex/requests">Requests</a></nav>
-</header>
     <main>
+      <header>
+    <a href="/gamevortex/" class="header--title">SurfScape GameVortex
+        
+    <nav class="header--navbar"><a href="/gamevortex/">Home</a><a href="/gamevortex/games" aria-current="page">Games</a><a href="/gamevortex/requests">Requests</a></nav>
+</a></header>
+
       
     <script src="/gamevortex/public/libs/ruffle.js"></script>
     <script>
@@ -32,24 +33,23 @@
             const player = ruffle.createPlayer();
             const container = document.getElementById("container");
             container.appendChild(player);
-
             const sourceLink = document
-                .querySelector('a[href^="/public/library/flash/"]')
+                .getElementById("sourceLink")
                 .getAttribute("href");
-            const gamePath = sourceLink.substring(sourceLink.lastIndexOf("/") + 1);
-            player.load(`/public/library/flash/${gamePath}`);
+            player.load(sourceLink);
         });
     </script>
     <div id="container" class="game--window--container"></div>
-    <a href="/gamevortex/public/library/flash/interactive_buddy.swf">Source</a>
+    <a id="sourceLink" href="/gamevortex/public/library/flash/interactive_buddy.swf">Game File</a>
     
 
-    </main>
-    <footer>
-    &copy; 2023 - SurfScape GameVortex is part of the <a href="https://surfscape.neocities.org">SurfScape Project</a> - <em>running 0.0.1-dev1</em>
+
+      <footer>
+    &copy; 2023 - SurfScape GameVortex is part of the <a href="https://surfscape.neocities.org">SurfScape Project</a> - <em>running 0.1.0-rc01</em>
     <br>
     <a href="/gamevortex/privacy">Privacy Policy</a>
     - <a href="/gamevortex/terms-of-service">Terms of Service</a>
 </footer>
+    </main>
   </body>
 </html>
