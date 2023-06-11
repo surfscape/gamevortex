@@ -1,0 +1,205 @@
+:root {
+  --color-bg: #3a3a3a;
+  --color-accent: #2c85d8;
+  --color-text: #202020;
+  --color-bg-container: #343a40;
+  --color-stroke: #8d8d8d;
+  --color-content-bg: #ffffff;
+
+  --container--shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+
+  --spacing-xxsm: 0.25rem;
+  --spacing-xsm: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing: 1rem;
+  --spacing-md: 1.25rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xlg: 1.75rem;
+  --spacing-xxlg: 2rem;
+
+  --radius: 8px;
+  --radius-inset: 4px;
+  --viewport: 800px;
+  --dialog-viewport: 600px;
+}
+
+body,
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
+    "Android Emoji", "EmojiOne Color", "Twemoji";
+}
+
+body {
+  margin: 0;
+  font-size: 1.05rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  padding: 0;
+}
+
+main {
+  background: var(--color-content-bg);
+  margin: 0 auto;
+  max-width: var(--viewport);
+  box-shadow: var(--container--shadow);
+  overflow: hidden;
+}
+
+header,
+.header--title,
+.options--group,
+.options--group--item,
+.header--navbar {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  color: var(--color-text);
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-stroke);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.header--title {
+  font-size: 2.5em;
+  font-family: "VortexBrand";
+  text-decoration: none;
+}
+
+.options--group--item {
+  padding: var(--spacing-xxsm);
+  border-top: 1px solid var(--color-stroke);
+  border-bottom: 1px solid var(--color-stroke);
+  cursor: pointer;
+}
+
+.options--group--item img {
+  transition-duration: 200ms;
+}
+
+.options--group--item:hover img {
+  filter: grayscale(1);
+}
+
+.options--group .options--group--item:first-child {
+  border-top-left-radius: var(--radius-inset);
+  border-bottom-left-radius: var(--radius-inset);
+  border-left: 1px solid var(--color-stroke);
+}
+
+.options--group .options--group--item:last-child {
+  border-top-right-radius: var(--radius-inset);
+  border-bottom-right-radius: var(--radius-inset);
+  border-right: 1px solid var(--color-stroke);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding: var(--spacing) 0 0 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal--content {
+  background-color: var(--color-content-bg);
+  margin: 0 auto;
+  padding: var(--spacing);
+  max-width: var(--dialog-viewport);
+  border-radius: var(--radius-inset);
+  box-shadow: var(--container--shadow);
+}
+
+.modal--close {
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--color-stroke);
+  user-select: none;
+}
+
+.modal--close:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.grid--page {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  padding: var(--spacing-sm);
+}
+
+section p {
+  text-indent: 16px;
+  text-align: justify;
+}
+
+.game--grid {
+  display: grid;
+  gap: var(--spacing-sm);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.game--card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-stroke);
+  border-radius: var(--radius-inset);
+  overflow: hidden;
+}
+
+.game--card--banner {
+  display: block;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.game--card--meta {
+  padding: var(--spacing-xsm);
+  margin: auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-xsm);
+}
+
+.game--card--meta img {
+  display: block;
+  width: 32px;
+}
+
+.game--window--container {
+  margin: var(--spacing) auto;
+}
+
+footer {
+  text-align: center;
+  padding: var(--spacing-sm) 0;
+  border-top: 1px solid var(--color-stroke);
+}

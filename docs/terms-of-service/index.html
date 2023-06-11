@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+    Terms of Service - SurfScape GameVortex
+    
+</title>
+<meta name="description" content="Your nostalgic, Neocities inspired, flash games portal!">
+<link rel="canonical" href="https://surfscape.github.io/gamevortex">
+<link rel="stylesheet" href="/gamevortex/css/font.css">
+<link rel="stylesheet" href="/gamevortex/css/global.css">
+  </head>
+  <body>
+    <main>
+      <header>
+    <a href="/gamevortex/" class="header--title"><img src="/gamevortex/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
+    <nav class="options--group">
+        <a class="options--group--item" href="/gamevortex/request" title="Request a game"><img src="/gamevortex/public/icons/24x24/brick-add.png" alt="Request a game"></a>
+        <button class="options--group--item" id="modalGrab"><img src="/gamevortex/public/icons/24x24/help.png" alt="Info"></button>
+
+    </nav>
+    <div id="infoModal" class="modal">
+        <section class="modal--content">
+            <span class="modal--close">&times;</span>
+            <h1>About Us</h1>
+            <p>GameVortex is an open source service created and managed by the <a href="https://surfscape.neocities.org">SurfScape</a> project.
+            </p>
+        </section>
+    </div>
+    <script>
+        var modal = document.getElementById("infoModal");
+        var btn = document.getElementById("modalGrab");
+        var span = document.getElementsByClassName("modal--close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</header>
+
+      
+        <h1>Terms of Service</h1>
+<p>Welcome to SurfScape Advertising, free and open source advertising services for Neocities websites created by <a href="https://surfscape.neocities.org">SurfScape</a>. By using our services, you agree to be bound by these terms. Please read them carefully.</p>
+<ol>
+<li>
+<p><strong>Acceptable use</strong></p>
+<p>You agree to use our services in a manner that is consistent with these terms and all applicable laws and regulations. You agree not to use our services to promote any illegal or prohibited activity, including but not limited to NSFW content or any racist or toxic behavior.</p>
+</li>
+<li>
+<p><strong>Privacy</strong></p>
+<p>We take your privacy seriously. Please see our <a href="/gamevortex/privacy">Privacy Policy</a> for details on how we collect, use, and share your personal information.</p>
+</li>
+<li>
+<p><strong>Termination</strong></p>
+<p>We reserve the right to terminate your use of our services at any time, for any reason, without notice. You may terminate your use of our services at any time by filling the <a href="https://surfscape.neocities.org/departments/termination">SurfScape Termination Department</a> form and choosing SurfScape Advertising.</p>
+</li>
+<li>
+<p><strong>Disclaimer</strong></p>
+<p>Our services are provided on an &quot;as is&quot; and &quot;as available&quot; basis. We do not make any warranties or representations, express or implied, about the services we provide. We are not responsible for any damages or losses that may result from your use of our services.</p>
+</li>
+<li>
+<p><strong>Changes to these terms</strong></p>
+<p>We may update these Terms of Service from time to time. We will notify you of any changes by posting the new terms on our website.</p>
+</li>
+<li>
+<p><strong>Contact us</strong></p>
+<p>If you have any questions or concerns about this Privacy Policy, please contact us trough our <a href="https://surfscape.neocities.org/department/tos">SurfScape TOS Department</a> and fill the form.</p>
+</li>
+</ol>
+<p>Last updated: 07 May 2023</p>
+
+      
+
+      <footer>
+    &copy; <a href="https://surfscape.neocities.org/">SurfScape</a> GameVortex 2023 |     <a href="/gamevortex/privacy">Privacy Policy</a>
+    - <a href="/gamevortex/terms-of-service">Terms of Service</a> | <em>Running 0.1.0-rc02</em>
+</footer>
+    </main>
+  </body>
+</html>
