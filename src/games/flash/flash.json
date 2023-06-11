@@ -1,4 +1,5 @@
 {
   "layout": "loaderFlash.njk",
-  "permalink": "/games/{{title | slugify }}/"
+  "permalink": "/games/{{title | slugify }}/",
+  "platform": "Flash"
 }

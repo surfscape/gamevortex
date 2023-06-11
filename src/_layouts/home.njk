@@ -1,0 +1,10 @@
+{% extends "./base.njk" %}
+
+{% block content %}
+    <div class="grid--page">
+        {% include "sidebar.njk" %}
+        <section>
+            {{ content | safe}}
+        </section>
+    </div>
+{% endblock %}

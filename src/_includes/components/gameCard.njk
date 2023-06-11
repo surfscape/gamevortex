@@ -1,0 +1,11 @@
+<a href="{{params.url}}" class="game--card">
+    <img src="/public/images/game_banners/{{params.img}}.jpg" alt="{{params.title}} banner" class="game--card--banner">
+    <div class="game--card--meta">
+        <strong>{{params.title}}</strong>
+        {%- if params.platform == "Flash" -%}
+            <img src="/public/icons/48x48/flash.png" alt="Flash Logo">
+        {%- else -%}
+            <img src="/public/icons/48x48/unity.png" alt="Unity Logo">
+        {%- endif -%}
+    </div>
+</a>

@@ -1,11 +1,25 @@
 ---
-layout: base.njk
+layout: home.njk
 ---
 
-# Testing
+{%- from "components/components.njk" import component -%}
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequatur ratione soluta aut! Nihil eveniet vitae sequi totam soluta atque suscipit fugit voluptatem illum aliquam! Enim quam aperiam temporibus assumenda.
-Fuga voluptate est, maiores, molestias quia dolorum saepe culpa beatae iusto incidunt deleniti. Cumque nihil ipsum facere enim? Culpa laborum voluptatibus inventore. Molestiae molestias esse a, quam rem facilis at.
-Aspernatur earum quibusdam quo maxime ipsa rem quam ullam itaque magni placeat vel, suscipit quia ipsum nostrum odio, tempore est. Necessitatibus harum neque asperiores cupiditate dolor explicabo, nostrum est illum!
-Distinctio vitae amet quisquam quos, error, quasi adipisci placeat obcaecati, autem dignissimos nesciunt. Voluptatum sequi, aperiam consectetur eum libero accusantium, amet aspernatur odit a optio quas fugit fugiat eaque ut!
-Architecto dolorum pariatur, nostrum deleniti magni natus necessitatibus officia consectetur fugiat sunt eaque cumque illo delectus quos modi. In, quidem eos odit placeat eveniet consequatur repellat quisquam illo nulla nihil!
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quibusdam cum dolor. Molestias iure tenetur dolore dolores ipsum, dignissimos voluptatem alias deleniti quas corporis ex, cumque dolorum pariatur quia neque!
+
+## Latest Additions
+
+<div class="game--grid">
+{%- for game in collections.games | reverse -%}
+    {%- if loop.index0 < 3 -%}
+    {{ component('gameCard', { title: game.data.title, url: game.url, img: game.data.banner, platform: game.data.platform}) }}
+{%- endif -%}
+{%- endfor -%}
+</div>
+
+## GameVortex Collection
+
+<div class="game--grid">
+{%- for game in collections.games -%}
+    {{ component('gameCard', { title: game.data.title, url: game.url, img: game.data.banner, platform: game.data.platform}) }}
+{%- endfor -%}
+</div>

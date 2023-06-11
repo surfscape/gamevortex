@@ -3,21 +3,25 @@
 {% block content %}
     <script src="/public/libs/UnityLoader.js"></script>
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "/public/library/unity/{{gamePath}}/{{gamePath}}.json");
+        const sourceLink = document
+            .getElementById("sourceLink")
+            .getAttribute("href");
+        var gameInstance = UnityLoader.instantiate("gameContainer", sourceLink);
     </script>
     <div class="webgl--content">
         <div id="gameContainer">
             <canvas id="#canvas"></canvas>
         </div>
     </div>
+    <a style="display:none;" id="sourceLink" href="/public/library/unity/{{gamePath}}/{{gamePath}}.json">Game File</a>
     <style>
-        #gameContainer,
-        #unityContainer,
-        .webgl-content,
-        canvas {
-            width: 900px !important;
-            height: 650px !important;
+        #gameContainer {
+            display: block;
+            margin: var(--spacing) auto !important;
+            width: 780px !important;
+            height: 680px !important;
         }
     </style>
+
     {{ content | safe }}
 {% endblock %}
