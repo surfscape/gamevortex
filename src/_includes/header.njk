@@ -2,31 +2,6 @@
     <a href="/" class="header--title"><img src="/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
     <nav class="options--group">
         <a class="options--group--item"href="/request" title="Request a game" ><img src="/public/icons/24x24/brick-add.png" alt="Request a game"></a>
-        <button class="options--group--item" id="modalGrab"><img src="/public/icons/24x24/help.png" alt="Info"></button>
-
+        <a class="options--group--item"href="/about" title="About GameVortex" ><img src="/public/icons/24x24/help.png" alt="About GameVortex"></a>
     </nav>
-    <div id="infoModal" class="modal">
-        <section class="modal--content">
-            <span class="modal--close">&times;</span>
-            <h1>About Us</h1>
-            <p>GameVortex is an open source service created and managed by the <a href="https://surfscape.neocities.org">SurfScape</a> project.
-            </p>
-        </section>
-    </div>
-    <script>
-        var modal = document.getElementById("infoModal");
-        var btn = document.getElementById("modalGrab");
-        var span = document.getElementsByClassName("modal--close")[0];
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </header>

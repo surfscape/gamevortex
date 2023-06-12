@@ -19,64 +19,61 @@
     <a href="/gamevortex/" class="header--title"><img src="/gamevortex/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
     <nav class="options--group">
         <a class="options--group--item" href="/gamevortex/request" title="Request a game"><img src="/gamevortex/public/icons/24x24/brick-add.png" alt="Request a game"></a>
-        <button class="options--group--item" id="modalGrab"><img src="/gamevortex/public/icons/24x24/help.png" alt="Info"></button>
-
+        <a class="options--group--item" href="/gamevortex/about" title="About GameVortex"><img src="/gamevortex/public/icons/24x24/help.png" alt="About GameVortex"></a>
     </nav>
-    <div id="infoModal" class="modal">
-        <section class="modal--content">
-            <span class="modal--close">&times;</span>
-            <h1>About Us</h1>
-            <p>GameVortex is an open source service created and managed by the <a href="https://surfscape.neocities.org">SurfScape</a> project.
-            </p>
-        </section>
-    </div>
-    <script>
-        var modal = document.getElementById("infoModal");
-        var btn = document.getElementById("modalGrab");
-        var span = document.getElementsByClassName("modal--close")[0];
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </header>
-
       
+
+    <div class="game--window">
+        <div id="gameContainer" class="container">
+            <canvas id="#canvas"></canvas>
+        </div>
+        <div class="game--window--controls">
+            <span class="game--window--title">Slope</span>
+            <button id="fullscreenButton">Fullscreen</button>
+        </div>
+    </div>
     <script src="/gamevortex/public/libs/UnityLoader.js"></script>
+    <a style="display:none;" id="sourceLink" href="/gamevortex/public/library/unity/slope/slope.json">Game File</a>
     <script>
         const sourceLink = document
             .getElementById("sourceLink")
             .getAttribute("href");
         var gameInstance = UnityLoader.instantiate("gameContainer", sourceLink);
     </script>
-    <div class="webgl--content">
-        <div id="gameContainer">
-            <canvas id="#canvas"></canvas>
-        </div>
-    </div>
-    <a style="display:none;" id="sourceLink" href="/gamevortex/public/library/unity/slope/slope.json">Game File</a>
-    <style>
-        #gameContainer {
-            display: block;
-            margin: var(--spacing) auto !important;
-            width: 780px !important;
-            height: 680px !important;
-        }
-    </style>
-
     
+    <script>
+        /* fullscreen handling */
+        var fullscreenButton = document.getElementById('fullscreenButton');
+        var container = document.getElementsByClassName('container');
 
+        fullscreenButton.addEventListener('click', function () {
+            if (container.requestFullscreen) {
+                container.requestFullscreen();
+            } else if (container.mozRequestFullScreen) {
+                container.mozRequestFullScreen();
+            } else if (container.webkitRequestFullscreen) {
+                container.webkitRequestFullscreen();
+            } else if (container.msRequestFullscreen) {
+                container.msRequestFullscreen();
+            }
+        });
+        document.addEventListener('fullscreenchange', function () {
+            if (document.fullscreenElement === container) {
+                container
+                    .classList
+                    .add('fullscreen');
+            } else {
+                container
+                    .classList
+                    .remove('fullscreen');
+            }
+        });
+    </script>
 
       <footer>
     &copy; <a href="https://surfscape.neocities.org/">SurfScape</a> GameVortex 2023 |     <a href="/gamevortex/privacy">Privacy Policy</a>
-    - <a href="/gamevortex/terms-of-service">Terms of Service</a> | <em>Running 0.1.0-rc02</em>
+    - <a href="/gamevortex/terms-of-service">Terms of Service</a> | <em>Running 0.2.0-rc01</em>
 </footer>
     </main>
   </body>

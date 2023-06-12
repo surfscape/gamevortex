@@ -1,7 +1,12 @@
 <aside class="sidebar">
     <div class="pod">
         <div class="pod--content">
-        test
-    </div>
+            <span class="pod--title">Genres</span>
+            <nav class="genre--navbar">
+                {% for genre in nav.genre %}
+                    <a href="{{genre.url}}">{{genre.title}}</a>
+                {% endfor %}
+            </nav>
+        </div>
     </div>
 </aside>

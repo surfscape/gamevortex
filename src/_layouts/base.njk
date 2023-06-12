@@ -6,11 +6,9 @@
   <body>
     <main>
       {% include "header.njk" %}
-
       {% block content %}
         {{ content | safe}}
       {% endblock %}
-
       {% include "footer.njk" %}
     </main>
   </body>

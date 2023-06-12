@@ -1,6 +1,6 @@
 {
   "name": "surfscape-gamevortex",
-  "version": "0.1.0-rc02",
+  "version": "0.2.0-rc01",
   "description": "Your nostalgic, Neocities inspired, online games portal!",
   "main": ".eleventy.js",
   "scripts": {

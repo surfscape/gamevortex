@@ -1,0 +1,16 @@
+{
+  "genre": [
+    {
+      "title": "Action",
+      "url": "/action"
+    },
+    {
+      "title": "Platformer",
+      "url": "/platformer"
+    },
+    {
+      "title": "Strategy",
+      "url": "/strategy"
+    }
+  ]
+}

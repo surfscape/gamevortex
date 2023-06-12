@@ -1,10 +1,12 @@
 :root {
-  --color-bg: #3a3a3a;
-  --color-accent: #2c85d8;
-  --color-text: #202020;
-  --color-bg-container: #343a40;
-  --color-stroke: #8d8d8d;
-  --color-content-bg: #ffffff;
+  --color-bg: #000000;
+  --color-accent: #e03f33;
+  --color-primary: yellowgreen;
+  --color-text: #ffffff;
+  --color-text-inverted: #000000;
+  --color-text-accent: #ffffff;
+  --color-stroke: hsla(0, 0%, 40%, 0.5);
+  --color-content-bg: #1d1d1d;
 
   --container--shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
 
@@ -17,25 +19,32 @@
   --spacing-xlg: 1.75rem;
   --spacing-xxlg: 2rem;
 
-  --radius: 8px;
-  --radius-inset: 4px;
-  --viewport: 800px;
-  --dialog-viewport: 600px;
+  --radius: 4px;
+  --viewport: 900px;
 }
 
 body,
 html {
+  font-size: 1.05rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
     "Android Emoji", "EmojiOne Color", "Twemoji";
+  line-height: 1.5;
 }
 
 body {
   margin: 0;
-  font-size: 1.05rem;
   background: var(--color-bg);
   color: var(--color-text);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+  color: var(--color-accent);
+  text-orientation: sideways;
 }
 
 a {
@@ -46,11 +55,26 @@ a:hover {
   text-decoration: none;
 }
 
-button {
-  border: none;
-  background: none;
+button,
+.button {
   font: inherit;
-  padding: 0;
+  border: 1px solid var(--color-stroke);
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: var(--color-text-accent);
+  transition: all 125ms ease-in-out;
+}
+
+button:hover,
+.button:hover {
+  border-color: var(--color-text-accent);
+  background: var(--color-text-accent);
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: var(--color-text-inverted);
 }
 
 main {
@@ -71,25 +95,33 @@ header,
 }
 
 header {
-  color: var(--color-text);
+  color: var(--color-text-inverted);
   justify-content: space-between;
   padding: var(--spacing-sm);
   border-bottom: 1px solid var(--color-stroke);
-  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.75),
-    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  background: linear-gradient(
+    0deg,
+    rgba(146, 221, 32, 1) 0%,
+    rgba(173, 255, 47, 1) 100%
+  );
 }
 
 .header--title {
   font-size: 2.5em;
   font-family: "VortexBrand";
   text-decoration: none;
+  color: inherit;
+}
+
+.options--group {
+  border-radius: var(--radius);
+  box-shadow: var(--container--shadow);
+  overflow: hidden;
 }
 
 .options--group--item {
   padding: var(--spacing-xxsm);
-  border-top: 1px solid var(--color-stroke);
-  border-bottom: 1px solid var(--color-stroke);
-  cursor: pointer;
+  background: var(--color-content-bg);
 }
 
 .options--group--item img {
@@ -100,63 +132,51 @@ header {
   filter: grayscale(1);
 }
 
-.options--group .options--group--item:first-child {
-  border-top-left-radius: var(--radius-inset);
-  border-bottom-left-radius: var(--radius-inset);
-  border-left: 1px solid var(--color-stroke);
-}
-
-.options--group .options--group--item:last-child {
-  border-top-right-radius: var(--radius-inset);
-  border-bottom-right-radius: var(--radius-inset);
-  border-right: 1px solid var(--color-stroke);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding: var(--spacing) 0 0 0;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal--content {
-  background-color: var(--color-content-bg);
-  margin: 0 auto;
-  padding: var(--spacing);
-  max-width: var(--dialog-viewport);
-  border-radius: var(--radius-inset);
-  box-shadow: var(--container--shadow);
-}
-
-.modal--close {
-  float: right;
-  font-size: 2em;
-  font-weight: bold;
-  color: var(--color-stroke);
-  user-select: none;
-}
-
-.modal--close:hover {
-  color: var(--color-accent);
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .grid--page {
   display: grid;
+  gap: var(--spacing);
   grid-template-columns: 0.4fr 1fr;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-xxlg) var(--spacing-sm);
+}
+
+section h1 {
+  margin-top: 0;
+  font-size: 2em;
 }
 
 section p {
   text-indent: 16px;
   text-align: justify;
+}
+
+.pod {
+  --radius: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-stroke);
+  padding: var(--spacing-sm);
+  box-shadow: inset 0px 0px 0px 1px #ffffffa8;
+  background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(63, 63, 63) 100%);
+  overflow: hidden;
+}
+
+.genre--navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.genre--navbar a {
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+.genre--navbar a:hover {
+  letter-spacing: 7px;
+}
+
+.pod--title {
+  font-size: 1.15em;
+  display: block;
+  border-bottom: 2px solid var(--color-stroke);
+  font-weight: 700;
 }
 
 .game--grid {
@@ -166,11 +186,22 @@ section p {
 }
 
 .game--card {
+  --radius: 6px;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-stroke);
-  border-radius: var(--radius-inset);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  box-shadow: var(--container--shadow);
+  text-decoration: none;
   overflow: hidden;
+  scale: 1;
+  transition: all 180ms ease-in-out;
+}
+
+.game--card:hover {
+  box-shadow: none;
+  scale: 0.925;
 }
 
 .game--card--banner {
@@ -178,6 +209,9 @@ section p {
   width: 100%;
   height: 100px;
   object-fit: cover;
+  border-bottom: 1px solid var(--color-stroke);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
 }
 
 .game--card--meta {
@@ -191,11 +225,49 @@ section p {
 
 .game--card--meta img {
   display: block;
-  width: 32px;
+  width: 24px;
 }
 
-.game--window--container {
+/* game loader css (game window, container, controls, ruffle theme, etc)*/
+ruffle-player {
+  --ruffle-blue: linear-gradient(
+    0deg,
+    rgba(146, 221, 32, 1) 0%,
+    rgba(173, 255, 47, 1) 100%
+  );
+  --ruffle-orange: var(--color-text-inverted);
+}
+.game--window {
+  max-width: 700px;
   margin: var(--spacing) auto;
+  background: var(--color-accent);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-stroke);
+  box-shadow: var(--container--shadow);
+  overflow: hidden;
+}
+
+.game--window--container,
+ruffle-player {
+  width: 100% !important;
+  height: 500px !important;
+}
+
+#container.fullscreen ruffle-player {
+  width: 100% !important;
+  height: 100% !important;
+}
+.game--window--controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-xsm) var(--spacing-xsm) var(--spacing-xsm);
+}
+
+.game--window--title {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--color-text-accent);
 }
 
 footer {
