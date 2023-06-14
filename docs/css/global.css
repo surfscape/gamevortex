@@ -1,9 +1,14 @@
+/* 
+2023 SurfScape
+GameVortex Theme
+rev: 0.7
+*/
+
 :root {
   --color-bg: #ffffff;
   --color-accent: #e03f33;
   --color-primary: #adfd36;
   --color-text: #000000;
-  --color-text-inverted: #000000;
   --color-text-accent: #ffffff;
   --color-stroke: #b4b4b4;
   --color-inside-stroke: inset 0px 0px 0px 1px #ffffff;
@@ -25,6 +30,7 @@
   --viewport: 980px;
 }
 
+/* basic style and some resets */
 *,
 *::after,
 *::before {
@@ -65,11 +71,8 @@ a:hover {
 button,
 .button {
   font: inherit;
-  border: 1px solid var(--color-stroke);
-  border-radius: var(--radius);
   background: var(--color-accent);
   color: var(--color-text-accent);
-  transition: all 125ms ease-in-out;
 }
 
 button:hover,
@@ -81,9 +84,10 @@ button:hover,
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-text-inverted);
+  color: var(--color-text-accent);
 }
 
+/* main page wrapper */
 main {
   background: var(--color-bg);
   margin: 0 auto;
@@ -94,6 +98,7 @@ main {
   overflow: hidden;
 }
 
+/* to save on bandwidth but it set's all those elemnts into flex elements */
 header,
 .header--title,
 .options--group,
@@ -103,6 +108,7 @@ header,
   align-items: center;
 }
 
+/* style for page header */
 header {
   color: var(--color-text-inverted);
   justify-content: space-between;
@@ -116,15 +122,18 @@ header {
 }
 
 .header--title {
-  font-size: 2.5em;
-  font-family: "VortexBrand";
-  text-decoration: none;
+  font-size: 2.25em;
+  font-family: "Courier New";
+  font-weight: 600;
+  font-style: italic;
   color: inherit;
 }
 
+/* small navbar on the top left of the header*/
 .options--group {
   border-radius: var(--radius);
   box-shadow: var(--container--shadow);
+  user-select: none;
   overflow: hidden;
 }
 
@@ -141,6 +150,7 @@ header {
   filter: grayscale(1);
 }
 
+/* page layout (sidebar and content) */
 .grid--page {
   display: grid;
   gap: var(--spacing);
@@ -148,6 +158,7 @@ header {
   padding: var(--spacing);
 }
 
+/* custom style for html markup content */
 section h1 {
   margin-top: 0;
   font-size: 2em;
@@ -158,6 +169,7 @@ section p {
   text-align: justify;
 }
 
+/* set's gap for both sidebar and the main content */
 .pod--group,
 .sidebar {
   display: grid;
@@ -165,7 +177,9 @@ section p {
   height: fit-content;
 }
 
-.container {
+/* similar to pod but for main content and larger */
+.box,
+.content--section {
   border-radius: var(--radius);
   border: 1px solid var(--color-stroke);
   box-shadow: var(--color-inside-stroke);
@@ -178,18 +192,27 @@ section p {
   overflow: hidden;
 }
 
-.container--title {
+.box--title {
   display: flex;
   align-items: flex-end;
   gap: var(--spacing-xsm);
   font-weight: 700;
   padding: var(--spacing-xsm) var(--spacing-sm);
+  user-select: none;
 }
 
-.container--content {
+.box--content {
   padding: var(--spacing-sm);
 }
 
+/* for single pages */
+.content--section {
+  max-width: 65ch;
+  margin: var(--spacing) auto;
+  padding: var(--spacing);
+}
+
+/* pod section (sidebar sections) */
 .pod {
   border-radius: var(--radius);
   border: 1px solid var(--color-stroke);
@@ -204,12 +227,14 @@ section p {
   padding: var(--spacing-xxsm) var(--spacing-sm);
   background: linear-gradient(0deg, #b3b3b3 0%, #fbfbfb 100%);
   text-shadow: 1px 1px 0 white;
+  user-select: none;
 }
 
 .pod--content {
   padding: var(--spacing-sm);
 }
 
+/* style for genre section on the sidebar */
 .genre--navbar {
   display: flex;
   flex-direction: column;
@@ -223,12 +248,14 @@ section p {
   letter-spacing: 7px;
 }
 
+/* game card container */
 .game--grid {
   display: grid;
   gap: var(--spacing-xsm);
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* game card (container, game title, game banner */
 .game--card {
   display: flex;
   color: var(--color-text);
@@ -241,6 +268,7 @@ section p {
   height: 65px;
   object-fit: cover;
   border: 1px solid var(--color-stroke);
+  user-select: none;
 }
 
 .game--card--meta {
@@ -264,38 +292,61 @@ ruffle-player {
   );
   --ruffle-orange: var(--color-text-inverted);
 }
+
+/* game window wrapper */
 .game--window {
   max-width: 720px;
-  margin: var(--spacing) auto;
-  background: var(--color-accent);
+  margin: var(--spacing-xlg) auto;
+  background: var(--color-text);
   border-radius: var(--radius);
-  border: 1px solid var(--color-stroke);
-  box-shadow: var(--container--shadow);
+  color: var(--color-text-accent);
+  border: 3px solid var(--color-text);
   overflow: hidden;
 }
 
+/* set's size for both flash and html games (width is set on .game--window */
 .game--window ruffle-player,
 .game--window iframe {
   width: 100% !important;
   height: 480px !important;
 }
 
+/* for cinematic mode */
 #container.fullscreen ruffle-player,
 #container.fullscreen iframe {
   width: 100% !important;
   height: 100% !important;
 }
+
+/* fix to remove extra height from #container */
+#container {
+  display: flex;
+}
+
 .game--window--controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--spacing-xsm) var(--spacing-xsm) var(--spacing-xsm);
+  padding: var(--spacing-xsm);
 }
 
 .game--window--title {
   font-size: 1.15em;
   font-weight: 600;
-  color: var(--color-text-accent);
+}
+
+.game--window--controls button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxsm);
+  border: 0;
+  background: 0;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.game--window--controls button:hover {
+  opacity: 0.8;
 }
 
 footer {

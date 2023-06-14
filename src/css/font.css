@@ -1,8 +1,0 @@
-@font-face {
-  font-display: swap;
-  font-family: "VortexBrand";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/public/fonts/branding.woff") format("woff"),
-    url("/public/fonts/branding.woff2") format("woff2");
-}

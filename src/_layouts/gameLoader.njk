@@ -3,29 +3,11 @@
 {% block content %}
     <div class="game--window">
         <div id="container">
-            <script src="/public/libs/ruffle.js"></script>
-            <a style="display:none;" id="sourceLink" href="/public/library/flash/{{codename}}.swf">Game File</a>
-            <script>
-                window.RufflePlayer = window.RufflePlayer || {};
-                window.addEventListener("load", (event) => {
-                    const ruffle = window
-                        .RufflePlayer
-                        .newest();
-                    const player = ruffle.createPlayer();
-                    const container = document.getElementById("container");
-                    container.appendChild(player);
-                    const sourceLink = document
-                        .getElementById("sourceLink")
-                        .getAttribute("href");
-                    player.load(sourceLink);
-                });
-            </script>
-            {# {% block loaderScript %}{% endblock %} #}
+            {% block loaderScript %}{% endblock %}
         </div>
-
         <div class="game--window--controls">
             <span class="game--window--title">{{title}}</span>
-            <button id="fullscreenButton">Fullscreen</button>
+            <button id="fullscreenButton"><img src="/public/icons/16x16/full-screen.png" alt="Toggle cinematic mode">Cinematic</button>
         </div>
     </div>
     <script>

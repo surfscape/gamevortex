@@ -1,44 +1,36 @@
 ---
 title: Privacy Policy
-layout: base.njk
+layout: page.njk
 ---
 
-# {{title}}
+At SurfScape GameVortex, we prioritize the privacy of our users. This Privacy Policy outlines our practices for collecting, using, and sharing information when you visit and use our flash game web portal.
 
-At SurfScape Advertising, we take your privacy very seriously. This Privacy Policy outlines our practices for collecting, using, and sharing your personal information.
+**1.** Information we collect
 
-1. **Information we collect**
+We do not collect any personal information such as IP addresses, emails, or names, as we do not ask for this information and do not track it. Our website does not use cookies or any other tracking technologies. We do not employ any recommendation systems or algorithms.
 
-   We do not collect personal information such as IP addresses, emails, or names, as we do not ask for this information and do not track it. All data collected by SurfScape Advertising is publicly accessible for transparency and because it is not considered personal information.
+**2.** How we use your information
 
-2. **How we use your information**
+Since we do not collect any personal information or use tracking technologies, we do not use your information in any way.
 
-   We do not use your personal information in any way. We do not share your information with third parties or partners. We always try to fight any request of data by governments.
+**3.** Information sharing
 
-3. **Information sharing**
+We do not share any information with third parties. Your information remains strictly confidential and is not disclosed to any external parties.
 
-   We do not share your information with third parties or partners.
+**4.** Data retention
 
-4. **Data retention**
+We do not retain any personal information as we do not collect any such data. We do not keep logs or records of user activities.
 
-   We only retain the public database of all joined sites, which is considered non-personal information. We do not retain personal data such as IP addresses, emails, or names.
+**5.** User rights
 
-5. **User rights**
+We respect your right to privacy. As we do not collect personal information, there is no user-specific information to access, or delete. However, if you have any concerns or questions about our privacy practices, [please contact us through our support page](/support).
 
-   We respect your right to privacy and believe in transparency. As such, we allow you to access, rectify, or delete your public information at any time. ~~To do so, please contact our SurfScape User Rights Department through our contact form.~~
+**6.** Location
 
-6. **Location**
+SurfScape GameVortex is based in Portugal, which is a member of the European Union. We comply with the General Data Protection Regulation (GDPR) and other applicable data protection laws within the European Union.
 
-   SurfScape Advertising is based in Portugal, which is a member of the European Union. Therefore, we are subject to the General Data Protection Regulation (GDPR) and other applicable data protection laws in the European Union.
+**7.** Changes to this policy
 
-7. **Changes to this policy**
+If there are any changes to our privacy practices, we will update this Privacy Policy accordingly. We recommend reviewing this policy periodically for any updates.
 
-   We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on our website.
-
-8. **Contact us**
-
-   ~~If you have any questions or concerns about this Privacy Policy, please contact our SurfScape Privacy Department through our contact form.~~
-
-**Update:** Our web portal is still in development, and as a result, AdZone is currently closed. Our SurfScape department is also temporarily unavailable. We apologize for any inconvenience this may cause. If you have any questions or concerns, please check back at a later time for updates. Thank you for your understanding.
-
-Last updated: 09 May 2023
+Last updated: 14 June 2023

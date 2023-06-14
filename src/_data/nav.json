@@ -1,33 +1,19 @@
 {
   "optionItems": [
     {
-      "title": "Action",
+      "title": "Request a game",
       "icon": "brick-add",
-      "url": "/action"
+      "url": "/request"
     },
     {
       "title": "Sitemap",
       "icon": "sitemap",
-      "url": "/sitemap"
+      "url": "/sitemap.xml"
     },
     {
-      "title": "Help",
+      "title": "Support",
       "icon": "help",
-      "url": "/help"
-    }
-  ],
-  "genre": [
-    {
-      "title": "Action",
-      "url": "/action"
-    },
-    {
-      "title": "Platformer",
-      "url": "/platformer"
-    },
-    {
-      "title": "Strategy",
-      "url": "/strategy"
+      "url": "/support"
     }
   ]
 }

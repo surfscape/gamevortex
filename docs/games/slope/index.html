@@ -10,8 +10,8 @@
 </title>
 <meta name="description" content="Your nostalgic, Neocities inspired, flash games portal!">
 <link rel="canonical" href="https://surfscape.github.io/gamevortex">
-<link rel="stylesheet" href="/gamevortex/css/font.css">
 <link rel="stylesheet" href="/gamevortex/css/global.css">
+<link rel="shortcut icon" href="/gamevortex/public/icons/favicon/gamevortex.png" type="image/x-icon">
   </head>
   <body>
     <main>
@@ -19,25 +19,18 @@
     <a href="/gamevortex/" class="header--title"><img src="/gamevortex/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
     <nav class="options--group">
         
-            <a class="options--group--item" href="/gamevortex/action" title="Action"><img src="/gamevortex/public/icons/24x24/brick-add.png" alt="Action"></a>
+            <a class="options--group--item" href="/gamevortex/request" title="Request a game"><img src="/gamevortex/public/icons/24x24/brick-add.png" alt="Request a game"></a>
         
-            <a class="options--group--item" href="/gamevortex/sitemap" title="Sitemap"><img src="/gamevortex/public/icons/24x24/sitemap.png" alt="Sitemap"></a>
+            <a class="options--group--item" href="/gamevortex/sitemap.xml" title="Sitemap"><img src="/gamevortex/public/icons/24x24/sitemap.png" alt="Sitemap"></a>
         
-            <a class="options--group--item" href="/gamevortex/help" title="Help"><img src="/gamevortex/public/icons/24x24/help.png" alt="Help"></a>
+            <a class="options--group--item" href="/gamevortex/support" title="Support"><img src="/gamevortex/public/icons/24x24/help.png" alt="Support"></a>
         
     </nav>
 </header>
       
-
     <div class="game--window">
-        <div id="gameContainer" class="container">
-            <canvas id="#canvas"></canvas>
-        </div>
-        <div class="game--window--controls">
-            <span class="game--window--title">Slope</span>
-            <button id="fullscreenButton">Fullscreen</button>
-        </div>
-    </div>
+        <div id="container">
+            
     <script src="/gamevortex/public/libs/UnityLoader.js"></script>
     <a style="display:none;" id="sourceLink" href="/gamevortex/public/library/unity/slope/slope.json">Game File</a>
     <script>
@@ -46,11 +39,29 @@
             .getAttribute("href");
         var gameInstance = UnityLoader.instantiate("gameContainer", sourceLink);
     </script>
-    
+    <div id="gameContainer">
+        <canvas id="#canvas"></canvas>
+    </div>
+    <style>
+        #gameContainer {
+            max-width: 900px !important;
+            height: 650px !important;
+        }
+        .game--window {
+            max-width: 900px;
+        }
+    </style>
+
+        </div>
+        <div class="game--window--controls">
+            <span class="game--window--title">Slope</span>
+            <button id="fullscreenButton"><img src="/gamevortex/public/icons/16x16/full-screen.png" alt="Toggle cinematic mode">Cinematic</button>
+        </div>
+    </div>
     <script>
         /* fullscreen handling */
         var fullscreenButton = document.getElementById('fullscreenButton');
-        var container = document.getElementsByClassName('container');
+        var container = document.getElementById('container');
 
         fullscreenButton.addEventListener('click', function () {
             if (container.requestFullscreen) {
@@ -80,7 +91,7 @@
     </main>
     <footer>
     &copy; <a href="https://surfscape.neocities.org/">SurfScape</a> GameVortex 2023 |     <a href="/gamevortex/privacy">Privacy Policy</a>
-    - <a href="/gamevortex/terms-of-service">Terms of Service</a> | <em>Running 0.9.0-rc02</em>
+    - <a href="/gamevortex/terms-of-service">Terms of Service</a> | <em>Running 1.0.0-rc01</em>
 </footer>
   </body>
 </html>
