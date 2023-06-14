@@ -1,0 +1,43 @@
+{% extends "./base.njk" %}
+
+{% block content %}
+    <div class="game--window">
+        <div id="container">
+            <iframe src="/public/library/html/{{codename}}/index.html" frameborder="0"></iframe>
+            {# {% block loaderScript %}{% endblock %} #}
+        </div>
+
+        <div class="game--window--controls">
+            <span class="game--window--title">{{title}}</span>
+            <button id="fullscreenButton">Fullscreen</button>
+        </div>
+    </div>
+    <script>
+        /* fullscreen handling */
+        var fullscreenButton = document.getElementById('fullscreenButton');
+        var container = document.getElementById('container');
+
+        fullscreenButton.addEventListener('click', function () {
+            if (container.requestFullscreen) {
+                container.requestFullscreen();
+            } else if (container.mozRequestFullScreen) {
+                container.mozRequestFullScreen();
+            } else if (container.webkitRequestFullscreen) {
+                container.webkitRequestFullscreen();
+            } else if (container.msRequestFullscreen) {
+                container.msRequestFullscreen();
+            }
+        });
+        document.addEventListener('fullscreenchange', function () {
+            if (document.fullscreenElement === container) {
+                container
+                    .classList
+                    .add('fullscreen');
+            } else {
+                container
+                    .classList
+                    .remove('fullscreen');
+            }
+        });
+    </script>
+{% endblock %}

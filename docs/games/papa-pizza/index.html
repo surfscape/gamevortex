@@ -1,51 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>
     Papa Pizza - SurfScape GameVortex
     
 </title>
-<meta name="description" content="Your nostalgic, Neocities inspired, flash games portal!">
+<meta name="description" content="Your nostalgic, Neocities inspired, flash games portal!"/>
 <link rel="canonical" href="https://surfscape.github.io/gamevortex">
-<link rel="stylesheet" href="/gamevortex/css/font.css">
-<link rel="stylesheet" href="/gamevortex/css/global.css">
+<link rel="stylesheet" href="/css/font.css"/>
+<link rel="stylesheet" href="/css/global.css"/>
   </head>
   <body>
     <main>
       <header>
-    <a href="/gamevortex/" class="header--title"><img src="/gamevortex/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
+    <a href="/" class="header--title"><img src="/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
     <nav class="options--group">
-        <a class="options--group--item" href="/gamevortex/request" title="Request a game"><img src="/gamevortex/public/icons/24x24/brick-add.png" alt="Request a game"></a>
-        <a class="options--group--item" href="/gamevortex/about" title="About GameVortex"><img src="/gamevortex/public/icons/24x24/help.png" alt="About GameVortex"></a>
+        <a class="options--group--item"href="/request" title="Request a game" ><img src="/public/icons/24x24/brick-add.png" alt="Request a game"></a>
+        <a class="options--group--item"href="/about" title="About GameVortex" ><img src="/public/icons/24x24/help.png" alt="About GameVortex"></a>
     </nav>
 </header>
       
     <div class="game--window">
-
-        <script src="/gamevortex/public/libs/ruffle.js"></script>
-        <a style="display:none;" id="sourceLink" href="/gamevortex/public/library/flash/papa-pizza.swf">Game File</a>
-        <script>
-            window.RufflePlayer = window.RufflePlayer || {};
-            window.addEventListener("load", (event) => {
-                const ruffle = window
-                    .RufflePlayer
-                    .newest();
-                const player = ruffle.createPlayer();
-                const container = document.getElementById("container");
-                container.appendChild(player);
-                const sourceLink = document
-                    .getElementById("sourceLink")
-                    .getAttribute("href");
-                player.load(sourceLink);
-            });
-        </script>
         <div id="container">
-
             
-
         </div>
 
         <div class="game--window--controls">
@@ -53,7 +33,6 @@
             <button id="fullscreenButton">Fullscreen</button>
         </div>
     </div>
-
     <script>
         /* fullscreen handling */
         var fullscreenButton = document.getElementById('fullscreenButton');
@@ -83,10 +62,11 @@
         });
     </script>
 
-      <footer>
-    &copy; <a href="https://surfscape.neocities.org/">SurfScape</a> GameVortex 2023 |     <a href="/gamevortex/privacy">Privacy Policy</a>
-    - <a href="/gamevortex/terms-of-service">Terms of Service</a> | <em>Running 0.2.0-rc01</em>
-</footer>
+
     </main>
+    <footer>
+    &copy; <a href="https://surfscape.neocities.org/">SurfScape</a> GameVortex 2023 |     <a href="/privacy">Privacy Policy</a>
+    - <a href="/terms-of-service">Terms of Service</a> | <em>Running 0.9.0-rc02</em>
+</footer>
   </body>
 </html>

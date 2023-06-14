@@ -1,4 +1,21 @@
 {
+  "optionItems": [
+    {
+      "title": "Action",
+      "icon": "brick-add",
+      "url": "/action"
+    },
+    {
+      "title": "Sitemap",
+      "icon": "sitemap",
+      "url": "/sitemap"
+    },
+    {
+      "title": "Help",
+      "icon": "help",
+      "url": "/help"
+    }
+  ],
   "genre": [
     {
       "title": "Action",

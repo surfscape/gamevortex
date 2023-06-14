@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
     tabIndex: false,
   });
   eleventyConfig.addCollection("games", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/games/**/*.md");
+    return collectionApi.getFilteredByGlob("src/games/**/**/*.md");
   });
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
     extensions: "html",

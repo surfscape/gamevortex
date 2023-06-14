@@ -1,11 +1,6 @@
 <a href="{{params.url}}" class="game--card">
-    <img src="/public/images/game_banners/{{params.img}}.jpg" alt="{{params.title}} banner" class="game--card--banner">
+    <img src="/public/images/game-art/{{params.img}}.webp" alt="{{params.title}} banner" class="game--card--banner">
     <div class="game--card--meta">
-        <strong>{{params.title}}</strong>
-        {%- if params.platform == "Flash" -%}
-            <img title="{{params.platform}}" src="/public/icons/32x32/flash.png" alt="Flash Logo">
-        {%- else -%}
-            <img title="{{params.platform}}" src="/public/icons/48x48/unity.png" alt="Unity Logo">
-        {%- endif -%}
+        <span class="game--card-title">{{params.title}}</span>
     </div>
 </a>

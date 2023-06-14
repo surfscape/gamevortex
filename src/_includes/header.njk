@@ -1,7 +1,8 @@
 <header>
     <a href="/" class="header--title"><img src="/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
     <nav class="options--group">
-        <a class="options--group--item"href="/request" title="Request a game" ><img src="/public/icons/24x24/brick-add.png" alt="Request a game"></a>
-        <a class="options--group--item"href="/about" title="About GameVortex" ><img src="/public/icons/24x24/help.png" alt="About GameVortex"></a>
+        {% for optionItems in nav.optionItems %}
+            <a class="options--group--item"href="{{optionItems.url}}" title="{{optionItems.title}}" ><img src="/public/icons/24x24/{{optionItems.icon}}.png" alt="{{optionItems.title}}"></a>
+        {% endfor %}
     </nav>
 </header>

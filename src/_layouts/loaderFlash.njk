@@ -1,63 +1,21 @@
-{% extends "./base.njk" %}
+{% extends "./gameLoader.njk" %}
 
-{% block content %}
-    <div class="game--window">
-
-        <script src="/public/libs/ruffle.js"></script>
-        <a style="display:none;" id="sourceLink" href="/public/library/flash/{{gamePath}}">Game File</a>
-        <script>
-            window.RufflePlayer = window.RufflePlayer || {};
-            window.addEventListener("load", (event) => {
-                const ruffle = window
-                    .RufflePlayer
-                    .newest();
-                const player = ruffle.createPlayer();
-                const container = document.getElementById("container");
-                container.appendChild(player);
-                const sourceLink = document
-                    .getElementById("sourceLink")
-                    .getAttribute("href");
-                player.load(sourceLink);
-            });
-        </script>
-        <div id="container">
-
-            {{ content | safe }}
-
-        </div>
-
-        <div class="game--window--controls">
-            <span class="game--window--title">{{title}}</span>
-            <button id="fullscreenButton">Fullscreen</button>
-        </div>
-    </div>
-
+{% block loaderScript %}
+    <script src="/public/libs/ruffle.js"></script>
+    <a style="display:none;" id="sourceLink" href="/public/library/flash/{{codename}}.swf">Game File</a>
     <script>
-        /* fullscreen handling */
-        var fullscreenButton = document.getElementById('fullscreenButton');
-        var container = document.getElementById('container');
-
-        fullscreenButton.addEventListener('click', function () {
-            if (container.requestFullscreen) {
-                container.requestFullscreen();
-            } else if (container.mozRequestFullScreen) {
-                container.mozRequestFullScreen();
-            } else if (container.webkitRequestFullscreen) {
-                container.webkitRequestFullscreen();
-            } else if (container.msRequestFullscreen) {
-                container.msRequestFullscreen();
-            }
-        });
-        document.addEventListener('fullscreenchange', function () {
-            if (document.fullscreenElement === container) {
-                container
-                    .classList
-                    .add('fullscreen');
-            } else {
-                container
-                    .classList
-                    .remove('fullscreen');
-            }
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window
+                .RufflePlayer
+                .newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            const sourceLink = document
+                .getElementById("sourceLink")
+                .getAttribute("href");
+            player.load(sourceLink);
         });
     </script>
 {% endblock %}

@@ -4,21 +4,22 @@ layout: home.njk
 
 {%- from "components/components.njk" import component -%}
 
-<div class="pod">
-<span class="pod--title">Latest Additions</span>
-<div class="game--grid">
+<div class="container">
+<span class="container--title"><img src="/public/icons/24x24/new.png" alt="NEW Icon">Latest Additions</span>
+<div class="container--content game--grid">
 {%- for game in collections.games | reverse -%}
     {%- if loop.index0 < 3 -%}
-    {{ component('gameCard', { title: game.data.title, url: game.url, img: game.data.banner, platform: game.data.platform}) }}
+    {{ component('gameCard', { title: game.data.title, url: game.url, img: game.data.codename}) }}
 {%- endif -%}
 {%- endfor -%}
 </div>
 </div>
 
-## GameVortex Collection
-
-<div class="game--grid">
-{%- for game in collections.games -%}
-    {{ component('gameCard', { title: game.data.title, url: game.url, img: game.data.banner, platform: game.data.platform}) }}
+<div class="container">
+<span class="container--title"><img src="/public/icons/24x24/controller.png" alt="GameVortex Games Icon">All Games</span>
+<div class="container--content game--grid">
+{%- for game in collections.games  -%}
+    {{ component('gameCard', { title: game.data.title, url: game.url, img: game.data.codename}) }}
 {%- endfor -%}
+</div>
 </div>

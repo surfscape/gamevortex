@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+    Moto X3M - SurfScape GameVortex
+    
+</title>
+<meta name="description" content="Your nostalgic, Neocities inspired, flash games portal!">
+<link rel="canonical" href="https://surfscape.github.io/gamevortex">
+<link rel="stylesheet" href="/gamevortex/css/font.css">
+<link rel="stylesheet" href="/gamevortex/css/global.css">
+  </head>
+  <body>
+    <main>
+      <header>
+    <a href="/gamevortex/" class="header--title"><img src="/gamevortex/public/images/home_logo.png" alt="GameVortex Logo">GameVortex</a>
+    <nav class="options--group">
+        
+            <a class="options--group--item" href="/gamevortex/action" title="Action"><img src="/gamevortex/public/icons/24x24/brick-add.png" alt="Action"></a>
+        
+            <a class="options--group--item" href="/gamevortex/sitemap" title="Sitemap"><img src="/gamevortex/public/icons/24x24/sitemap.png" alt="Sitemap"></a>
+        
+            <a class="options--group--item" href="/gamevortex/help" title="Help"><img src="/gamevortex/public/icons/24x24/help.png" alt="Help"></a>
+        
+    </nav>
+</header>
+      
+    <div class="game--window">
+        <div id="container">
+            <iframe src="/gamevortex/public/library/html/moto-x3m/index.html" frameborder="0"></iframe>
+            
+        </div>
+
+        <div class="game--window--controls">
+            <span class="game--window--title">Moto X3M</span>
+            <button id="fullscreenButton">Fullscreen</button>
+        </div>
+    </div>
+    <script>
+        /* fullscreen handling */
+        var fullscreenButton = document.getElementById('fullscreenButton');
+        var container = document.getElementById('container');
+
+        fullscreenButton.addEventListener('click', function () {
+            if (container.requestFullscreen) {
+                container.requestFullscreen();
+            } else if (container.mozRequestFullScreen) {
+                container.mozRequestFullScreen();
+            } else if (container.webkitRequestFullscreen) {
+                container.webkitRequestFullscreen();
+            } else if (container.msRequestFullscreen) {
+                container.msRequestFullscreen();
+            }
+        });
+        document.addEventListener('fullscreenchange', function () {
+            if (document.fullscreenElement === container) {
+                container
+                    .classList
+                    .add('fullscreen');
+            } else {
+                container
+                    .classList
+                    .remove('fullscreen');
+            }
+        });
+    </script>
+
+
+    </main>
+    <footer>
+    &copy; <a href="https://surfscape.neocities.org/">SurfScape</a> GameVortex 2023 |     <a href="/gamevortex/privacy">Privacy Policy</a>
+    - <a href="/gamevortex/terms-of-service">Terms of Service</a> | <em>Running 0.9.0-rc02</em>
+</footer>
+  </body>
+</html>

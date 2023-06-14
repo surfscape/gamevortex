@@ -3,9 +3,24 @@
 {% block content %}
     <div class="game--window">
         <div id="container">
-            {% block loaderScript %}
-                {{ content | safe }}
-            {% endblock %}
+            <script src="/public/libs/ruffle.js"></script>
+            <a style="display:none;" id="sourceLink" href="/public/library/flash/{{codename}}.swf">Game File</a>
+            <script>
+                window.RufflePlayer = window.RufflePlayer || {};
+                window.addEventListener("load", (event) => {
+                    const ruffle = window
+                        .RufflePlayer
+                        .newest();
+                    const player = ruffle.createPlayer();
+                    const container = document.getElementById("container");
+                    container.appendChild(player);
+                    const sourceLink = document
+                        .getElementById("sourceLink")
+                        .getAttribute("href");
+                    player.load(sourceLink);
+                });
+            </script>
+            {# {% block loaderScript %}{% endblock %} #}
         </div>
 
         <div class="game--window--controls">
