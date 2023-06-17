@@ -2,7 +2,9 @@
 
 {% block loaderScript %}
     <script src="/public/libs/ruffle.js"></script>
+
     <a style="display:none;" id="sourceLink" href="/public/swf/{{codename}}.swf">Game File</a>
+
     <script>
         window.RufflePlayer = window.RufflePlayer || {};
         window.addEventListener("load", (event) => {
@@ -18,4 +20,5 @@
             player.load(sourceLink);
         });
     </script>
+
 {% endblock %}

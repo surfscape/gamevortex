@@ -1,8 +1,7 @@
 ---
 title: Super Drift
 codename: super-drift
-developer: SumbleSushi
-draft: true
+developer: RumbleSushi
 tags:
   - Racing
 ---
