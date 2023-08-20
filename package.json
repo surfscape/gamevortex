@@ -1,7 +1,7 @@
 {
   "name": "surfscape-gamevortex",
   "version": "0.0.1",
-  "description": "Your nostalgic, Neocities inspired, online games portal!",
+  "description": "The open source, flash and HTML5, gaming portal.",
   "main": ".eleventy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
