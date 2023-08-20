@@ -10,7 +10,7 @@
     "build:production": "cross-env NODE_ENV=production npx eleventy"
   },
   "author": "SurfScape Team",
-  "license": "GPL-3.0",
+  "license": "GPL-2.0",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "cross-env": "^7.0.3",
